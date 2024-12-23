@@ -1,9 +1,33 @@
-﻿<style >
-/* Reset and base styles */
+<style >
+
 * {
     margin: 0 auto;
     padding: 0 auto;
     box-sizing: border-box;
+}
+
+:root {
+    --obsidian: #09080C;
+    --midnight: #252422;
+    --purple: #15131B;
+    --ivory: #FFFBFE;
+    --slate: #E1E5F1;
+    --lavender: #C6BFFA;
+    --indigo: #5222FF;
+    --volt: #D5F91F;
+}
+
+.obsidian {
+    background-color: var(--obsidian);
+}
+
+.purple {
+    background-color: var(--purple);
+}
+
+body {
+    background-color: var(--obsidian);
+    row-gap: 0;
 }
 
 .container {
@@ -11,122 +35,13 @@
     margin: auto;
 }
 
-body {
-    font-family: 'Crimson Text', serif;
-    background-color: #0A0A0A;
-    color: white;
-    line-height: 1;
-    font-size: 18px; /* Slightly larger base size for Crimson Text */
-}
-
 section {
-    padding-left: 2em;
-    padding-right: 2em;
-}
-
-/* Typography styles */
-h2, h3, .section-label, .button {
-    font-family: "Space Grotesk", sans-serif;
-    font-weight: 300;
-}
-
-h1 {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 4.3rem;
-    font-weight: 300;
-}
-
-/* Header styles */
-.header {
-}
-
-.header_logo {
-    padding-top: .5em;
-    padding-bottom: .5em;
-    padding-left: 2em;
-    height: 1.3rem;
-}
-
-/* Hero banner */
-
-.hero {
-    position: relative;
-    text-align: center;
-}
-
-.hero_title {
-    text-align: left;
-}
-
-#hero_title {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-#hero_arrow {
-    position: absolute;
-    height: 1em;
-    width: 1em;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 1.5em;
-    padding-top: 2em;
-}
-
-#hero_banner {
-}
-
-
-.banner_text {
-    position: absolute;
-    bottom: 1.2em;
-    left: 2em;
-}
-
-h4 {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: .75rem;
-    font-weight: 600;
-    text-align: left;
-    z-index: 100;
-    margin-left: 20px;
-    margin-bottom: 0px;
-    color: #09080C;
-}
-
-.banner_cta {
-    position: absolute;
-    bottom: 1em;
-    right: 2.5em;
-    display: inline-block;
-}
-
-.learn_more {
-    z-index: 100;
-    background-color: #E1E5F1;
-    border: none;
-    color: #09080C;
-    padding-top: .5em;
-    padding-bottom: .5em;
-    padding-right: 1em;
-    padding-left: 1em;
-    text-align: center;
-    text-decoration: none;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: .75em;
-    font-weight: 700;
-    border-radius: 2em;
-}
-
-
-/* Problem section */
-.problem {
-    margin-top: 7.5em;
-    margin-bottom: 2em;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .section-label {
-    color: #D5F91F;
+    color: var(--volt);
     text-transform: uppercase;
     font-size: 0.75rem;
     margin-bottom: 1rem;
@@ -134,390 +49,396 @@ h4 {
     font-weight: 500;
 }
 
-.problem p {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.8rem; /* Larger for Crimson Text */
-    line-height: 1.1;
+h1, h2, h3, h4, .section-label, p {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--ivory);
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.mobile {
+    display: none;
 }
 
 
-/* Solution section */
-.solution {
+/* HEADER */
+header{
+}
+
+.header_logo {
+    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: 1.3rem;
+}
+
+hr {
+    margin: 0;
+}
+
+
+/* HERO */
+.hero_title {
+    display: flex;
+    grid-template-columns: 60% 40%;
     padding-top: 4rem;
-    margin-top: 5em;
-    background-color: #15131B;
+    padding-bottom: 3rem;
+}
+
+#hero_arrow {
+    height: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: 4.3rem;
+    font-weight: 500;
+    color: var(--ivory);
+}
+
+.hero_banner {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#banner_img {
+    grid-column: 1 / -1;
+}
+
+.banner_text {
+    margin-top: -6rem;
+}
+
+.banner_text h4 {
+    font-size: .75rem;
+    font-weight: 500;
+    padding-left: 1rem;
+}
+
+.banner_cta {
+    justify-self: end;
+    align-self: start;
+    margin-top: -2.5rem;
+    padding-right: 1rem;
+}
+
+.learn_more {
+    background-color: #E1E5F1;
+    border-radius: 2em;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: .75em;
+    font-weight: 700;
+    color: var(--obsidian);
+    text-decoration: none;
+    padding-top: .75em;
+    padding-bottom: .75em;
+    padding-right: 1.1em;
+    padding-left: 1.1em;
+    z-index: 100;
+}
+
+
+/* PROBLEM */
+.problem {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+.problem p {
+    width: 85%;
+    color: var(--ivory);
+    font-size: 1.6rem;
+    line-size: 1.1;
+}
+
+
+/* SOLUTION */
+.solution {
+    padding-top: 10rem;
+    padding-bottom: 8rem;
 }
 
 .solution-grid {
     display: grid;
-    grid-template-columns: 50% 25% 25%;
-    margin-top: 2rem;
+    grid-template-columns: 45% 55%;
 }
-    
-    #solution_copy {
-        float: left;
-    }
 
-    .solution h2 {
-        font-size: 2.5rem;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-        letter-spacing: -0.01em;
-    }
+.solution_copy {
+    color: var(--ivory);
+}
 
-    .solution p {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 1rem; /* Larger for Crimson Text */
-        line-height: 1.5;
-    }
+.animation_caption {
+    width: 30%;
+    font-size: .75rem;
+    color: var(--ivory);
+    justify-self: end;
+    align-self: end;
+}
 
-    .animation_caption {
-        align-self: end;
-    }
+.solution_hr {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
 
-    #animation_caption {
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: .65rem; /* Larger for Crimson Text */
-        line-height: 1.5;
-        text-align: left;
-    }
+.animation {
+    grid-column: 1 / -1;
+    border-radius: 2rem;
+}
 
-/* Processing comparison */
-    .processing-comparison {
-        background-color: #15131B;
-        padding-top: 2em;
-    }
-
-    video {
-        border-radius: .5em;
-    }
-
-/* Beliefs section */
+/* BELIEFS */
 .beliefs {
-    padding-top: 10rem;
-    background-color: #15131B;
-    font-family: 'Space Grotesk', sans-serif;
+    padding-top: 6rem;
 }
-
-    .beliefs h2 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        font-weight: 600;
-        letter-spacing: -0.01em;
-    }
-
 .beliefs-grid {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-top: 2rem;
-    padding-bottom: 5rem;
+    padding-bottom: 8rem;
 }
 
-    .belief-card {
-        padding: 1rem;
-    }
-
-    .belief-card h3 {
-        font-size: 1.2rem;
-        margin: 1rem 0;
-        font-weight: 500;
-        letter-spacing: -0.01em;
-        width: 80%;
-    }
-
-    .belief_a {
-        border-left: 1px solid #000;
-        border-right: 1px solid #000;
-        border-color: #FFFBFE;
-    }
-
-    .belief_b h3{
-        line-height: 2;
-    }
-
-    .belief_c {
-        border-left: 1px solid #000;
-        border-right: 1px solid #000;
-        border-color: #FFFBFE;
-    }
-
-    .icon {
-        margin-top: 2em;
-        height: 10%;
-    }
-
-.belief-card p {
-    font-size: .65em;
-    font-weight: 300;
-    width: 80%;
+.belief-card {
+    padding: 2rem;
+    padding-right: 4rem;
+    border-left: 1px solid var(--ivory);
+    border-right: 1px solid var(--ivory);
 }
 
-.belief-icon {
-    color: #4A3AFF;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.belief_b {
+    border-left: 0px solid var(--ivory);
+    border-right: 0px solid var(--ivory);
 }
 
-/* Team section */
+.icon {
+    height: 3rem;
+}
+
+.beliefs p {
+    color:var(--ivory);
+    font-size: 0.7rem;
+    margin-top: 0;
+}
+
+h3 {
+    color: var(--ivory);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* TEAM */
 .team {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
 }
-
-    .team h2 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        font-weight: 600;
-        letter-spacing: -0.01em;
-    }
 
 .team-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
-.team-photos {
-    aspect-ratio: 1;
-    padding-left: 3rem;
-    padding-right: 2rem;
-    padding-top: 3.5rem;
-    padding-bottom: 1rem;
-    border-radius: 2em 0em 0em 2em;
-    height: 24rem;
-    background-image: url('team_bg.png');
-    background-size: cover;
+.team_img_card {
+    padding: 2rem;
+    border-radius: 2rem 0rem 0rem 2rem;
+    align-content: center;
 }
 
 .team_img {
-    height: 22rem;
+    max-width: 100%;
 }
 
 .team-content {
-    background-color: #15131B;
-    padding: 2em;
-    height: 24rem;
-    border-radius: 0em 2em 2em 0em;
+    grid-column-start: 2;
+    padding: 0;
+    padding-top: 2rem;
+    margin: 0;
+    background-size: inherit;
+    background-color: var(--purple);
+    border-radius: 0rem 2rem 2rem 0rem;
 }
 
-.team-content p {
-    font-family: 'Space Grotesk', sans-serif;
-    margin-bottom: 1.5rem;
-    font-size: .85rem;
-    line-height: 1.6;
-}
+    .team-content-text {
+        color: var(--ivory);
+        font-weight: 300;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
 
-.careers_break {
-    margin-top:6em;
-    margin-bottom:1em;
-    margin-left: -2em;
-    margin-right: -2em;
-}
+    .team-content hr {
+        margin-top: 4rem;
+    }
 
-.career_cta {
-    display:inline;
-    margin-right: 0em;
-}
+    .career_cta {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 300;
+        color: var(--ivory);
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
 
-.career_cta {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: .85rem;
-    color: white;
-}
+    a {
+        color: var(--ivory);
+    }
 
-/* Footer */
+/* FOOTER */
 .footer {
     padding-top: 8rem;
-    padding-left: 4rem;
+    padding-left: 2rem;
     padding-bottom: 4rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    background-color: white;
+    border-top: 1px solid var(--ivory);
+    background-color: var(--ivory);
 }
 
 .footer_logo {
     position: absolute;
-    margin-top: -5em;
-    height: 16px;
+    margin-top: -6em;
+    height: 1rem
 }
 
 .footer_info {
     color: #252422;
     margin-bottom: -8em;
-    font-size:.5em;
+    font-size: .5em;
     font-family: 'Space Grotesk', sans-serif;
 }
 
+
 /* Responsive adjustments */
 
+@media (max-width: 800px) {
 
-@media (max-width: 700px) {
-
-    body {
-        font-size: 16px;
-        padding-left: 0em;
-        padding-right: 0em;
+    .hero_title {
+        grid-template-columns: 80% 20%;
     }
 
-    .hero h1 {
-        font-size: 2rem;
+    h1 {
+        font-size: 1.9rem;
     }
 
     #hero_arrow {
-        margin-top: 1em;
-        padding-top: 1em;
+        margin-top: -0.5rem;
+        height: 1.8rem;
     }
 
-    #banner_img {
-        content: url("hero_banner_mobile.png");
+    .solution_copy {
+        grid-column: 1 / -1;
     }
 
-    .banner_text {
-        margin-right: 1em;
-        position: absolute;
-        bottom: -5em;
-        left: 1em;
-    }
-
-    h4 {
-        color: white;
-
-    }
-
-    .banner_cta {
-        position: absolute;
-        bottom: -4em;
-        right: 2.5em;
-        display: inline-block;
-    }
-
-    .learn_more {
-        font-size: .9em;
-    }
-
-    .problem {
-        margin-top: 15em;
-        margin-bottom: 2em;
-    }
-
-    .problem p {
-        font-size: 1.2rem;
-    }
-
-    .solution-grid {
-        grid-template-columns: 100%;
-    }
-
-    .solution h2 {
-        font-size: 2rem;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-        letter-spacing: -0.01em;
-    }
     .animation_caption {
-        width: 65%;
-        margin-bottom: -28rem;
-        z-index: 100;
+        order: 4;
+        justify-self: start;
+        width: 120%;
     }
 
-    #animation_caption {
-        font-size: 1em;
+    .solution_hr {
+        order: 2;
     }
 
-    #animation_video {
-        clip-path: inset(20px);
-        border-radius: 2rem;
-        margin-top: -2rem;
-        margin-left: -1.5rem;
-        align-content: center;
-        width: 115%;
-    }
-
-    .beliefs h3 {
-        font-size: 1.5rem;
-    }
-
-    .beliefs p {
-        font-weight: 300;
-        font-size: 1rem;
+    .animation {
+        order: 3;
     }
 
     .beliefs-grid {
         grid-template-columns: 1fr;
     }
 
-    .beliefs h2 {
-        font-size: 2rem;
-    }
-
-    .belief_a {
-        border-right: 0px;
+    .belief-card {
         border-left: 0px;
-        border-top: 1px solid #000;
-        border-bottom: 1px solid #000;
-        border-color: #FFFBFE;
-    }
-
-    .belief_b h3 {
-        line-height: 1;
-    }
-
-    .belief_c {
         border-right: 0px;
-        border-left: 0px;
-        border-top: 1px solid #000;
-        border-bottom: 1px solid #000;
-        border-color: #FFFBFE;
-    }
-
-    .icon {
-        height:20%;
+        border-top: 1px solid var(--ivory);
+        border-bottom: 1px solid var(--ivory);
     }
 
     .team-grid {
         grid-template-columns: 1fr;
     }
 
-    .team h2 {
-        font-size: 2rem;
-    }
-
-    .team-photos {
-        padding-left: 0rem;
-        padding-right: 0rem;
-        padding-top: 3rem;
-        padding-bottom: -1rem;
-        margin-bottom: -4em;
-        margin-left: -2rem;
-        margin-right: 1rem;
-        border-radius: 2em 2em 0em 0em;
-        width: 100%;
-        background-image: url('team_bg_mobile.png');
+    .team_img_card {
         background-size: cover;
-    }
-
-    .team_img {
-        width:80%;
-        height:auto;
-        padding-left: 2em;
+        border-radius: 2rem 2rem 0rem 0rem;
     }
 
     .team-content {
-        font-size: 1.5em;
-        background-color: #15131B;
-        padding: 2rem;
-        margin-left:-2rem;
-        margin-right:2rem;
-        padding-bottom: 2rem;
-        margin-bottom:-1rem;
-        border-radius: 0em 0em 2rem 2rem;
+        grid-column-start: 1;
+        border-radius: 0rem 0rem 2rem 2rem;
     }
 
-    .careers_break {
-        margin-top:2em;
-        margin-bottom:2em;
-        margin-left:-1.5em;
-        margin-right:-1.5em;
+    .team-content hr {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
     }
+}
+
+@media (max-width: 550px) {
+    .mobile {
+        display: inherit;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .banner_text {
+        margin-top: 2rem;
+        color: var(--ivory)
+    }
+
+    .banner_text h4 {
+        padding-left: 0;
+        font-size: 0.8rem;
+    }
+
+    .banner_cta {
+        margin-top: 4rem;
+        padding-right: 0;
+    }
+
+    .problem p {
+        font-size: 1.3rem;
+        width: 100%;
+    }
+
+    .solution {
+        padding-bottom: 2rem;
+    }
+
+    .belief-card {
+        padding-left: 0;
+        padding-right: 2rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .beliefs p {
+        font-size: 0.95rem;
+        font-weight: 300;
+    }
+
+    .team-content-text {
+        padding-left: 2rem;
+        padding-right:2rem;
+        font-size: 0.75rem;
+    }
+
+    .career_cta {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 0.75rem;
+    }
+
+
 }
 
 </style >
