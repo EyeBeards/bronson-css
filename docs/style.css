@@ -316,7 +316,7 @@ h3 {
 
 .team-grid {
     display: grid;
-    grid-template-columns: 635px; 692px;
+    grid-template-columns: 635px 692px;
     padding-left: 52px;
     padding-right: 61px;
     padding-bottom: 202px;
