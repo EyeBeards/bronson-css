@@ -244,8 +244,12 @@ h4 {
     border-radius: 20px;
 }
 
-.image_round {
+.imgradius {
     border-radius: 20px;
+}
+
+.imageradius_mobile {
+    border-radius: 20px 20px 0px 0px;
 }
 
 .info_list {
