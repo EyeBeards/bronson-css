@@ -499,7 +499,7 @@ h3 {
 
     .banner_cta {
         justify-self: end;
-        align-self: start;
+        align-self: end;
         margin-top: 66px;
         margin-right: 0px;
     }
@@ -510,6 +510,10 @@ h3 {
         font-family: 'Space Grotesk', sans-serif;
         font-size: 16px;
         z-index: 100;
+    }
+
+    .learn_more_b {
+        grid-column: 2;
     }
 
     .problem {
